@@ -1,0 +1,24 @@
+theme = "darcula"
+
+[editor]
+line-number = "relative"
+cursorline = true
+auto-pairs = true
+text-width = 100
+# auto-save = true
+# bufferline = "multiple"
+
+# [editor.cursor-shape]
+# insert = "bar"
+# normal = "block"
+# select = "underline"
+
+# [editor.statusline]
+# left = ["mode", "spinner", "file-name"]
+# center = []
+# right = ["diagnostics", "position", "file-encoding"]
+# separator = "│"
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+g = { q = ":reflow" }
