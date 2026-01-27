@@ -23,3 +23,22 @@ indent = { tab-width = 2, unit = " " }
 auto-format = true
 language-servers = ["gopls"]
 formatter = { command = "gofumpt" }
+
+# requires biome and typescript installed
+# npm i -g vscode-html-language-server
+# npm i -g vscode-langservers-extracted
+# npm i -g @biomejs/biome
+# also compile superhtml and put it on $PATH
+
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+
+[[language]]
+name = "javascript"
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+auto-format = true
